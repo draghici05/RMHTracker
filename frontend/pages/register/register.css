@@ -20,7 +20,7 @@
     --transition: all 0.3s ease;
 }
 
-body {
+.register-page body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,17 +58,17 @@ body {
     color: var(--primary-dark);
 }
 
-form {
+.register-page {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.form-group {
+.register-page .form-group {
     position: relative;
 }
 
-.form-group label {
+.register-page .form-group label {
     display: block;
     margin-bottom: 6px;
     font-weight: 600;
@@ -77,7 +77,7 @@ form {
     padding-left: 5px;
 }
 
-.form-group input {
+.register-page .form-group input {
     width: 100%;
     padding: 14px 20px;
     border-radius: 15px;
@@ -91,14 +91,14 @@ form {
     transition: var(--transition);
 }
 
-.form-group input:focus {
+.register-page .form-group input:focus {
     outline: none;
     box-shadow: 
         inset 3px 3px 6px var(--shadow-dark),
         inset -3px -3px 6px var(--shadow-light);
 }
 
-button.submit-btn {
+.register-page button.submit-btn {
     background: var(--bg-color);
     color: var(--primary-color);
     border: none;
@@ -113,14 +113,14 @@ button.submit-btn {
         -8px -8px 16px var(--shadow-light);
 }
 
-button.submit-btn:hover {
+.register-page button.submit-btn:hover {
     color: var(--primary-dark);
     box-shadow: 
         6px 6px 12px var(--shadow-dark),
         -6px -6px 12px var(--shadow-light);
 }
 
-button.submit-btn:active {
+.register-page button.submit-btn:active {
     box-shadow: 
         inset 4px 4px 8px var(--shadow-dark),
         inset -4px -4px 8px var(--shadow-light);
@@ -144,12 +144,12 @@ button.submit-btn:active {
     text-decoration: underline;
 }
 
-.checkbox-container {
+.register-page .checkbox-container {
     position: relative;
     margin-right: 10px;
 }
 
-.checkbox-input {
+.register-page .checkbox-input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -157,7 +157,7 @@ button.submit-btn:active {
     width: 0;
 }
 
-.checkbox-custom {
+.register-page .checkbox-custom {
     display: block;
     width: 22px;
     height: 22px;
@@ -170,13 +170,13 @@ button.submit-btn:active {
     transition: var(--transition);
 }
 
-.checkbox-input:checked ~ .checkbox-custom {
+.register-page .checkbox-input:checked ~ .checkbox-custom {
     box-shadow: 
         inset 2px 2px 4px var(--shadow-dark),
         inset -2px -2px 4px var(--shadow-light);
 }
 
-.checkbox-input:checked ~ .checkbox-custom::after {
+.register-page .checkbox-input:checked ~ .checkbox-custom::after {
     content: '\f00c';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
@@ -193,7 +193,7 @@ button.submit-btn:active {
         padding: 25px 20px;
     }
 
-    button.submit-btn {
+    .register-page button.submit-btn {
         padding: 14px 30px;
     }
 }

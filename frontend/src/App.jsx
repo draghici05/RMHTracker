@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router'
 import './App.css'
 import Login from '../pages/login/login'
 import Register from '../pages/register/register'
+import Attendance from '../pages/attendance/attendance'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
               <Route path='/login' element={<Login onLogin={handleLogin} />} />
               <Route path='/register' element={<Register onRegister={handleRegister} />} />
               <Route path='/' element={<Navigate to='/login' />} />
+              <Route path='/attendance' element={<Attendance />} />
             </>
           ) : (
             <Route path='/' element={<Dashboard />} />

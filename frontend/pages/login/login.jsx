@@ -13,7 +13,7 @@ function Login() {
         try {
             const res = await axios.post(`${url}${routeLink}/login`, { email, password });
             toast.success('Logged in successfully!');
-            navigate('/dashboard'); 
+            navigate('/dashboard'); //de modificat aici
         } catch (err) {
             toast.error(err.response?.data || 'Login failed');
         }

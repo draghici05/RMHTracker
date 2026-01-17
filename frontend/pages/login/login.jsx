@@ -11,11 +11,21 @@ function Login() {
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
-            const res = await axios.post(`${url}${routeLink}/login`, { email, password });
-            toast.success('Logged in successfully!');
-            navigate('/dashboard'); //de modificat aici
-        } catch (err) {
-            toast.error(err.response?.data || 'Login failed');
+            const res = await axios.post(
+                'http://localhost:3000/api/auth/login',
+                { email, password },
+                { withCredentials: true }
+            );
+            const { user } = res.data;
+            if (user.role === 'EO') {
+                navigate('/eo-dashboard');
+            } else if (user.role === 'PARTICIPANT') {
+                navigate('/attendance');
+            } else {
+                navigate('/');
+            }
+        } catch (error) {
+            alert(error.response?.data?.error || 'Login failed');
         }
     };
 

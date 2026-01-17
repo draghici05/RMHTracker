@@ -22,7 +22,7 @@ async function intializeDB() {
     attendance.belongsTo(user, { foreignKey: 'participantId' });
 
     events.hasMany(accesscode, { foreignKey: 'eventId' });
-    attendance.belongsTo(events, { foreignKey: 'eventId' });
+    accesscode.belongsTo(events, { foreignKey: 'eventId' });
 
 }
 

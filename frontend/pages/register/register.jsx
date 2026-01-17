@@ -7,21 +7,22 @@ function Register() {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+    const [role, setRole] = useState('PARTICIPANT');
     const navigate = useNavigate();
 
-    const handleRegister = (event) => {
+    const handleRegister = async (event) => {
         event.preventDefault();
-        axios
-            .post(`${url}${routeLink}/register`, { email, password, name })
-            .then((res) => {
-                toast.success('Account created successfully!');
-                sleep(500).then(() => {
-                    navigate('/login');
-                });
-            })
-            .catch((err) => {
-                toast.error(err.response.data);
-            });
+        try {
+            await axios.post(
+                'http://localhost:3000/api/auth/register',
+                {
+                    name, email, password, role
+                }, { withCredentials: true }
+            );
+            navigate('/login');
+        } catch (error) {
+            alert(error.response?.data?.error || 'Registration failed');
+        }
     };
 
     return (
@@ -55,6 +56,18 @@ function Register() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor='role'>Role:</label>
+                        <select
+                            type='text'
+                            id='role'
+                            value={role}
+                            onChange={(e) => setRole(e.target.value)}
+                        >
+                            <option value="PARTICIPANT">Participant</option>
+                            <option value="EO">Event Organizer</option>
+                        </select>
                     </div>
                     <button type='submit'>Register</button>
                 </form>

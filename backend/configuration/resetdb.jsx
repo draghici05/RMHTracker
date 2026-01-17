@@ -1,6 +1,7 @@
 import db from './database.jsx';
+import initializeDB from './initializedb.jsx'
 
-initializeDatabase();
+initializeDB();
 
 (async () => {
     try {

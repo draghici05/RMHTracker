@@ -1,16 +1,15 @@
 import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-// import { Sequelize } from 'sequelize';  
+import { all } from './database.jsx';   
 
-const express = require("express");
 const app = express();
-
 app.use(express.json());
 
-// routes
-app.use("/api", require("./routes"));
-
-app.listen(8080, () => {
-  console.log("Backend running on http://localhost:8080");
+app.get('api/health', async (req, res) => {
+    res.json({ok: true});
 });
+
+app.get('api/events', async (req, res) => {
+    res.json({ok: true});
+});
+
+app.listen(3000, () => console.log('Server running on port 3000'));

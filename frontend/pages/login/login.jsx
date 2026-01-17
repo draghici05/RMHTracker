@@ -16,14 +16,14 @@ function Login() {
                 { email, password },
                 { withCredentials: true }
             );
-            const { user } = res.data;
+            const { user} = res.data;
             if (user.role === 'EO') {
-                navigate('/eo-dashboard');
+                navigate('/dashboard');
             } else if (user.role === 'PARTICIPANT') {
                 navigate('/attendance');
             } else {
                 navigate('/');
-            }
+            } 
         } catch (error) {
             alert(error.response?.data?.error || 'Login failed');
         }

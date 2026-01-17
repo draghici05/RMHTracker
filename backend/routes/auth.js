@@ -1,7 +1,6 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import user from '../models/user.js';
-import authRoutes from './routes/auth.jsx';
 
 const router = express.Router();
 const allowedRoles = new Set(['EO', 'PARTICIPANT']);
@@ -86,5 +85,4 @@ router.post('/logout', (req, res) => {
   req.session.destroy(() => res.json({ ok: true }));
 });
 
-app.use('/api/auth', authRoutes);
 export default router;

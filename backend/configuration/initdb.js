@@ -1,5 +1,5 @@
-import db from './database.jsx';   
-import intializeDB from './initializedb.jsx';
+import db from './database.js';   
+import intializeDB from './initializedb.js';
 
 intializeDB();
 

@@ -1,8 +1,8 @@
-import user from '../models/user.jsx';
-import events from '../models/events.jsx';
-import attendance from '../models/attendance.jsx';
-import eventgroup from '../models/eventsgroup.jsx';
-import accesscode from '../models/accesscode.jsx';
+import user from '../models/user.js';
+import events from '../models/events.js';
+import attendance from '../models/attendance.js';
+import eventgroup from '../models/eventsgroup.js';
+import accesscode from '../models/accesscode.js';
 
 async function intializeDB() {
 

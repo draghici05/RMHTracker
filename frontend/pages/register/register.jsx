@@ -69,7 +69,7 @@ function Register() {
                             <option value="EO">Event Organizer</option>
                         </select>
                     </div>
-                    <button type='submit'>Register</button>
+                    <button type='submit' className='submit-btn'>Register</button>
                 </form>
                 <a href='/login' className='login-link'>Already have an account? Login</a>
             </div>

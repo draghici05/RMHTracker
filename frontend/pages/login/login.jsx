@@ -18,9 +18,9 @@ function Login() {
             );
             const { user} = res.data;
             if (user.role === 'EO') {
-                navigate('/dashboard');
+                navigate('/home');
             } else if (user.role === 'PARTICIPANT') {
-                navigate('/attendance');
+                navigate('/home');
             } else {
                 navigate('/');
             } 
